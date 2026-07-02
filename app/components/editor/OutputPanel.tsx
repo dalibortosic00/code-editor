@@ -16,7 +16,7 @@ export function OutputPanel({ result, status, error }: OutputPanelProps) {
     <div className="flex h-full flex-col bg-surface-muted">
       {/* Panel header */}
       <div className="flex h-9 shrink-0 items-center gap-2 border-b border-border-subtle px-4">
-        <span className="text-[11px] font-mono font-medium uppercase tracking-widest text-text-ghost">
+        <span className="text-[11px] font-mono font-medium uppercase tracking-widest text-text-muted">
           Output
         </span>
         {status === "success" && (
@@ -34,7 +34,7 @@ export function OutputPanel({ result, status, error }: OutputPanelProps) {
       {/* Output body */}
       <div className="relative flex-1 overflow-auto p-4">
         {isEmpty && (
-          <p className="text-xs font-mono text-text-placeholder">
+          <p className="text-xs font-mono text-text-muted">
             Run your code to see output here.
           </p>
         )}
@@ -64,7 +64,7 @@ export function OutputPanel({ result, status, error }: OutputPanelProps) {
             {result.stderr && (
               <div>
                 {result.stdout && (
-                  <div className="mb-2 text-[10px] font-mono uppercase tracking-widest text-text-ghost">
+                  <div className="mb-2 text-[10px] font-mono uppercase tracking-widest text-text-faint">
                     stderr
                   </div>
                 )}
@@ -74,7 +74,7 @@ export function OutputPanel({ result, status, error }: OutputPanelProps) {
               </div>
             )}
             {!result.stdout && !result.stderr && (
-              <p className="text-xs font-mono text-text-ghost">
+              <p className="text-xs font-mono text-text-faint">
                 No output produced.
               </p>
             )}

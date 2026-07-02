@@ -23,6 +23,7 @@ export function LanguageSelector({
           if (lang) onChange(lang);
         }}
         disabled={disabled}
+        aria-label="Select programming language"
         className="h-8 rounded px-2 pr-7 text-xs font-mono font-medium bg-surface-overlay text-text-muted border border-border-default appearance-none cursor-pointer focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent disabled:opacity-40 disabled:cursor-not-allowed transition-colors hover:border-border-strong"
       >
         {LANGUAGES.map((lang) => (

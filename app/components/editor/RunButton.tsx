@@ -22,7 +22,7 @@ export function RunButton({ status, onClick }: RunButtonProps) {
       onClick={onClick}
       disabled={isRunning}
       aria-label="Run code"
-      className="flex h-8 items-center gap-2 rounded px-3 bg-accent text-white text-xs font-medium font-mono disabled:opacity-50 disabled:cursor-not-allowed hover:bg-accent-hover active:bg-accent-active focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface-base transition-colors"
+      className="flex h-8 items-center gap-2 rounded px-3 bg-accent-hover text-white text-xs font-medium font-mono disabled:opacity-50 disabled:cursor-not-allowed hover:bg-accent-active active:bg-accent-active focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface-base transition-colors"
     >
       {isRunning ? (
         <span className="inline-block h-3 w-3 rounded-full border-2 border-white/30 border-t-white animate-spin" />
