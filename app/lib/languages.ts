@@ -20,24 +20,12 @@ func main() {
     label: "Python",
     monacoLanguage: "python",
     pistonRuntime: "python",
-    version: "3.10.0",
+    version: "3.12.0",
     defaultCode: `def main():
     print("Hello, World!")
 
 if __name__ == "__main__":
     main()`,
-  },
-  {
-    id: "javascript",
-    label: "JavaScript",
-    monacoLanguage: "javascript",
-    pistonRuntime: "javascript",
-    version: "18.15.0",
-    defaultCode: `function main() {
-  console.log("Hello, World!");
-}
-
-main();`,
   },
   {
     id: "typescript",
@@ -56,7 +44,7 @@ main();`,
     label: "Rust",
     monacoLanguage: "rust",
     pistonRuntime: "rust",
-    version: "1.50.0",
+    version: "1.68.2",
     defaultCode: `fn main() {
     println!("Hello, World!");
 }`,

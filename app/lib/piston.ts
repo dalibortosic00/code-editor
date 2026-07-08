@@ -1,6 +1,7 @@
 import type { ExecutionResult } from "@/types/editor";
 
-const PISTON_BASE_URL = "PLACEHOLDER_FOR_PISTON_API_URL"; // Replace with the actual Piston API URL
+const PISTON_BASE_URL =
+  process.env.PISTON_BASE_URL || "http://localhost:2000/api/v2";
 
 export interface PistonFile {
   name?: string;

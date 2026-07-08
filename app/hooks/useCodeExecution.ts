@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { executeCode } from "@/lib/piston";
 import type {
   Language,
   ExecutionResult,
@@ -26,12 +25,22 @@ export function useCodeExecution(): UseCodeExecutionReturn {
     setResult(null);
 
     try {
-      const executionResult = await executeCode({
-        language: language.pistonRuntime,
-        version: language.version,
-        files: [{ content: code }],
+      const response = await fetch("/api/execute", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          language: language.pistonRuntime,
+          version: language.version,
+          files: [{ content: code }],
+        }),
       });
 
+      if (!response.ok) {
+        const { error: message } = await response.json();
+        throw new Error(message ?? "Execution failed");
+      }
+
+      const executionResult: ExecutionResult = await response.json();
       setResult(executionResult);
       setStatus(executionResult.code === 0 ? "success" : "error");
     } catch (err) {
